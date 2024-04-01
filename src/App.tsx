@@ -20,7 +20,6 @@ const App: React.FC = () => {
 		const index = Math.floor(hours / 6);
 		const startSeconds =
 			((hours % 6) * 60 + date.getMinutes()) * 60 + date.getSeconds();
-		//const startSeconds = 60 * (date.getMinutes() / 60);
 
 		setCurrentVideoUrl(
 			`${videoUrls[index]}${startSeconds}&autoplay=1&controls=0&modestbranding=1&rel=0`
