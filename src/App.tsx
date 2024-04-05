@@ -3,10 +3,10 @@ import "./App.scss";
 import VideoPlayer from "./VideoPlayer"; // Import the VideoPlayer component
 
 const videoUrls = [
-	"https://www.youtube-nocookie.com/embed/IRrvPhksYt8?si=5JxBKW4adB-eC5UP&amp;start=", //12am - 6am
-	"https://www.youtube-nocookie.com/embed/7DiEyqEdqmM?si=kLJhZlh-mYAvQbds&amp;start=", //6am - 12pm
-	"https://www.youtube-nocookie.com/embed/dBAHjZwXKFo?si=jxENG8XRi7dWXTV-&amp;start=", //12pm - 6pm
-	"https://www.youtube-nocookie.com/embed/2v1AJhKWWhk?si=UNZk6kE9D4Ox4unD&amp;start=", //6pm - 12am
+	"https://www.youtube-nocookie.com/embed/Dptx55JLQGE?si=3Z5Tno6LilosvD07&amp;start=", //12am - 6am
+	"https://www.youtube-nocookie.com/embed/cjSS3jKc54I?si=fG5XbaAWEt1pQabX&amp;start=", //6am - 12pm
+	"https://www.youtube-nocookie.com/embed/3a2a0XRXWyo?si=Om4RHmRP5cqIo3iK&amp;start=", //12pm - 6pm
+	"https://www.youtube-nocookie.com/embed/wsxZfCJHGbI?si=8uTykOekKDDZFUu0&amp;start=", //6pm - 12am
 ];
 
 const App: React.FC = () => {
