@@ -29,9 +29,21 @@ const App: React.FC = () => {
 	return (
 		<div className="App">
 			{!currentVideoUrl && (
-				<button className="start-video-button" onClick={selectVideoBasedOnTime}>
-					Start Video
-				</button>
+				<div>
+					<div className="intro-text">
+						<h1>yet</h1>
+						<p>
+							yet is an online installation by Joel Janson Johansen consisting
+							of 24 hours of looping audio and video.
+						</p>
+					</div>
+					<button
+						className="start-video-button"
+						onClick={selectVideoBasedOnTime}
+					>
+						Click here to start installation
+					</button>
+				</div>
 			)}
 			{currentVideoUrl && <VideoPlayer url={currentVideoUrl} />}
 		</div>
