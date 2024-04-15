@@ -4,7 +4,7 @@ import VideoPlayer from "./VideoPlayer"; // Import the VideoPlayer component
 
 const videoUrls = [
 	"https://www.youtube-nocookie.com/embed/Dptx55JLQGE?si=3Z5Tno6LilosvD07&amp;start=", //12am - 6am
-	"https://www.youtube-nocookie.com/embed/cjSS3jKc54I?si=fG5XbaAWEt1pQabX&amp;start=", //6am - 12pm
+	"https://www.youtube-nocookie.com/embed/xjWxll7QpfU?si=LwTlfkU6xbsz1hs3&amp;start=", //6am - 12pm
 	"https://www.youtube-nocookie.com/embed/3a2a0XRXWyo?si=Om4RHmRP5cqIo3iK&amp;start=", //12pm - 6pm
 	"https://www.youtube-nocookie.com/embed/wsxZfCJHGbI?si=8uTykOekKDDZFUu0&amp;start=", //6pm - 12am
 ];
