@@ -1,34 +1,34 @@
+// App.tsx
 import React, { useState } from "react";
 import "./App.scss";
-import VideoPlayer from "./VideoPlayer"; // Import the VideoPlayer component
+import VideoPlayer from "./VideoPlayer";
+import VideoPlayerPlaylist from "./VideoPlayerPlaylist";
 
-const videoUrls = [
-	"https://www.youtube-nocookie.com/embed/Dptx55JLQGE?si=3Z5Tno6LilosvD07&amp;start=", //12am - 6am
-	"https://www.youtube-nocookie.com/embed/xjWxll7QpfU?si=LwTlfkU6xbsz1hs3&amp;start=", //6am - 12pm
-	"https://www.youtube-nocookie.com/embed/3a2a0XRXWyo?si=Om4RHmRP5cqIo3iK&amp;start=", //12pm - 6pm
-	"https://www.youtube-nocookie.com/embed/wsxZfCJHGbI?si=8uTykOekKDDZFUu0&amp;start=", //6pm - 12am
+const videoIds = [
+	"Dptx55JLQGE", // 12am - 6am
+	"xjWxll7QpfU", // 6am - 12pm
+	"3a2a0XRXWyo", // 12pm - 6pm
+	"wsxZfCJHGbI", // 6pm - 12am
 ];
 
 const App: React.FC = () => {
-	const [currentVideoUrl, setCurrentVideoUrl] = useState("");
+	const [videoId, setVideoId] = useState("");
+	const [startSeconds, setStartSeconds] = useState(0);
 
 	const selectVideoBasedOnTime = () => {
-		const date = new Date(); // Get current date/time
-		date.setHours(date.getHours()); // Adjust for GMT+1
+		const date = new Date();
 		const hours = date.getHours();
-		console.log(hours);
 		const index = Math.floor(hours / 6);
-		const startSeconds =
-			((hours % 6) * 60 + date.getMinutes()) * 60 + date.getSeconds();
+		setVideoId(videoIds[index]);
 
-		setCurrentVideoUrl(
-			`${videoUrls[index]}${startSeconds}&autoplay=1&controls=0&modestbranding=1&rel=0`
-		);
+		const calculatedStartSeconds =
+			((hours % 6) * 60 + date.getMinutes()) * 60 + date.getSeconds();
+		setStartSeconds(calculatedStartSeconds);
 	};
 
 	return (
 		<div className="App">
-			{!currentVideoUrl && (
+			{!videoId && (
 				<div>
 					<div className="intro-text">
 						<h1>yet</h1>
@@ -45,7 +45,7 @@ const App: React.FC = () => {
 					</button>
 				</div>
 			)}
-			{currentVideoUrl && <VideoPlayer url={currentVideoUrl} />}
+			{videoId && <VideoPlayer videoId={videoId} startSeconds={startSeconds} />}
 		</div>
 	);
 };

@@ -40,3 +40,30 @@
 		bottom: 0; // Position at the bottom of the parent
 	}
 }
+
+.pause-play {
+	position: absolute; // Overlay over the video
+	top: 0; // Start from the top edge of the video-responsive
+	left: 0; // Start from the left edge of the video-responsive
+	width: 100%; // Extend the full width of the video
+	height: 100%; // Extend the full height of the video
+	background-color: rgba(255, 255, 255, 0); // Slightly transparent white
+	color: #ffffff;
+	font-size: 16px; // Bigger font size for visibility
+	z-index: 10; // Ensure it's on top of the iframe
+	border: none;
+	cursor: default;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 0; // No border radius for full coverage
+	&:hover {
+		background-color: rgba(
+			255,
+			255,
+			255,
+			0
+		); // Slightly less transparent on hover
+	}
+}
