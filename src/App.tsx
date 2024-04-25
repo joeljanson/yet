@@ -23,6 +23,7 @@ const App: React.FC = () => {
 
 		const calculatedStartSeconds =
 			((hours % 6) * 60 + date.getMinutes()) * 60 + date.getSeconds();
+		console.log("calculatedStartSeconds first is : ", calculatedStartSeconds);
 		setStartSeconds(calculatedStartSeconds);
 	};
 

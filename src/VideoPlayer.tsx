@@ -29,7 +29,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, startSeconds }) => {
 		playerVars: {
 			autoplay: 1, // Autoplay is on by default to match initial state
 			controls: 0,
-			//start: startSeconds,
+			start: startSeconds,
 			modestbranding: 1,
 			rel: 0,
 			origin: window.location.origin, // Adding origin for increased compatibility
@@ -106,7 +106,10 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, startSeconds }) => {
 						}
 					}}
 				/>
-				<button className="pause-play" onClick={togglePlayback}>
+				<button
+					className={isPlaying ? "pause-play" : "pause-play paused"}
+					onClick={togglePlayback}
+				>
 					{isPlaying ? "" : "video || paused"}
 				</button>
 				<div className="black-bar top"></div>
@@ -129,6 +132,7 @@ function calculateCurrentTime() {
 	const startSeconds =
 		((hours % 6) * 60 + date.getMinutes()) * 60 + date.getSeconds();
 
+	console.log("startSeconds secondly is : ", startSeconds);
 	return { videoId: videoIds[index], startSeconds };
 }
 

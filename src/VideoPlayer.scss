@@ -58,12 +58,9 @@
 	align-items: center;
 	text-align: center;
 	border-radius: 0; // No border radius for full coverage
-	&:hover {
-		background-color: rgba(
-			255,
-			255,
-			255,
-			0
-		); // Slightly less transparent on hover
+	transition: background-color 1.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth transition for background color */
+
+	&.paused {
+		background-color: rgba(0, 0, 0, 0.3); // Slightly transparent white
 	}
 }
